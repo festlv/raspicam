@@ -40,7 +40,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 namespace raspicam {
 
     RaspiCam::RaspiCam() {
-        _impl=new _private::Private_Impl;
+        _impl=new _private::Private_Impl();
     }
     RaspiCam::~RaspiCam() {
         delete _impl;
