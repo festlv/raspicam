@@ -38,9 +38,9 @@ include_directories(${PROJECT_SOURCE_DIR}/dependencies/current  ${PROJECT_SOURCE
 #find the mmal libraries(I use conditional because I normally comile in pc)
 
 if(${CMAKE_SYSTEM_PROCESSOR} MATCHES arm*) 
-FIND_LIBRARY(mmalcore_LIBS NAMES mmal_core PATHS /opt/vc/lib)
-FIND_LIBRARY(mmalutil_LIBS NAMES mmal_util PATHS /opt/vc/lib)
-FIND_LIBRARY(mmal_LIBS NAMES mmal PATHS /opt/vc/lib)
+FIND_LIBRARY(mmalcore_LIBS NAMES mmal_core PATHS /opt/vc/lib /usr/lib)
+FIND_LIBRARY(mmalutil_LIBS NAMES mmal_util PATHS /opt/vc/lib /usr/lib)
+FIND_LIBRARY(mmal_LIBS NAMES mmal PATHS /opt/vc/lib /usr/lib)
 IF( (NOT mmal_LIBS ) OR (NOT mmalutil_LIBS) OR (NOT mmalcore_LIBS) )
     MESSAGE(FATAL_ERROR "Could not find mmal libraries")
  ENDIF()
